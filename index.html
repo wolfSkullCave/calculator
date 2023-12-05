@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="calculator.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+
+        <div class="myFlexBox">
+            <input type="text" class="form-control" id="usrNum1" placeholder="First Number">
+            <input type="text" class="form-control" id="usrNum2" placeholder="Second Number">
+        </div>
+        <div class="myFlexBox">
+           <button type="button" class="btn btn-default" id="btnAdd">Add</button>
+           <button type="button" class="btn btn-default" id="btnSubtract">Subtract</button>
+           <button type="button" class="btn btn-default" id="btnMultiply">Multiply</button>
+           <button type="button" class="btn btn-default" id="btnDivide">Divide</button>
+        </div>
+        <div class="myGridBox">
+            <h3>Answer</h3>
+            <p id="numAnswer">0</p>
+        </div>
+    </div>
+</body>
+
+</html>

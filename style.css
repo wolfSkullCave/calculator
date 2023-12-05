@@ -1,0 +1,18 @@
+.myFlexBox {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+.btn-default {
+    min-width: 95px;
+}
+
+#numAnswer {
+    font-size: 20px;
+}
+
+.myGridBox {
+    display: grid;
+    margin: 10px;
+}
