@@ -4,9 +4,7 @@
     margin: 10px;
 }
 
-.btn-default {
-    min-width: 95px;
-}
+
 
 #numAnswer {
     font-size: 20px;
@@ -15,4 +13,55 @@
 .myGridBox {
     display: grid;
     margin: 10px;
+}
+
+
+
+.calcBg {
+    background-color: #2f2f2f;
+    max-width: 400px;
+    padding: 5px;
+}
+
+.calcDisplay {
+    background-color: rgb(201, 201, 201);
+    padding: 5px;
+    height: 60px;
+    /* vertical-align: middle; */
+    border: 5px solid black;
+}
+
+.calcDisplay p {
+    text-align: right;
+    color: #000000;
+    width: 100%;
+    font-size: 40px;
+}
+
+.calcRow button {
+    font-size: 20px;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    color: black;
+    flex: 1;
+
+}
+
+.btn-double {
+    flex: 3;
+}
+
+.btn-blue {
+    background-color: lightskyblue;
+}
+
+.btn-green {
+    background-color: lightseagreen;
+}
+
+.btn-orange {
+    background-color: orange;
 }

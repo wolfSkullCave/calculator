@@ -26,22 +26,46 @@
     <div class="container">
         <h1>Calculator</h1>
 
-        <div class="myFlexBox">
-            <input type="text" class="form-control" id="usrNum1" placeholder="First Number">
-            <input type="text" class="form-control" id="usrNum2" placeholder="Second Number">
-        </div>
-        <div class="myFlexBox">
-           <button type="button" class="btn btn-default" id="btnAdd">Add</button>
-           <button type="button" class="btn btn-default" id="btnSubtract">Subtract</button>
-           <button type="button" class="btn btn-default" id="btnMultiply">Multiply</button>
-           <button type="button" class="btn btn-default" id="btnDivide">Divide</button>
-           <button type="button" class="btn btn-default" id="reset">Reset</button>
+        <div class="calcBg">
+            <div class="myFlexBox calcRow calcDisplay">
+                <p>0</p>
+            </div>
 
+            <div class="myFlexBox calcRow">
+                <button type="button" class="btn btn-blue" id="btnAc">AC</button>
+                <button type="button" class="btn btn-blue" id="btnNeg">+/-</button>
+                <button type="button" class="btn btn-blue" id="btnPercent">%</button>
+                <button type="button" class="btn btn-orange" id="btnDivide">/</button>     
+            </div>
+
+            <div class="myFlexBox calcRow">
+                <button type="button" class="btn btn-green" id="btnSeven">7</button>
+                <button type="button" class="btn btn-green" id="btnEight">8</button>
+                <button type="button" class="btn btn-green" id="btnNine">9</button>
+                <button type="button" class="btn btn-orange" id="btnMultiply">*</button>     
+            </div>
+
+            <div class="myFlexBox calcRow">
+                <button type="button" class="btn btn-green" id="btnFour">4</button>
+                <button type="button" class="btn btn-green" id="btnFive">5</button>
+                <button type="button" class="btn btn-green" id="btnSix">6</button>
+                <button type="button" class="btn btn-orange" id="btnSubtract">-</button>     
+            </div>
+
+            <div class="myFlexBox calcRow">
+                <button type="button" class="btn btn-green" id="btnOne">1</button>
+                <button type="button" class="btn btn-green" id="btnTwo">2</button>
+                <button type="button" class="btn btn-green" id="btnThree">3</button>
+                <button type="button" class="btn btn-orange" id="btnAdd">+</button>     
+            </div>
+
+            <div class="myFlexBox calcRow">
+                <button type="button" class="btn btn-green btn-double" id="btnZero">0</button>
+                <button type="button" class="btn btn-green" id="btnPoint">.</button>
+                <button type="button" class="btn btn-orange" id="btnEquals">=</button>
+            </div>
         </div>
-        <div class="myGridBox">
-            <h3>Answer</h3>
-            <p id="numAnswer">0</p>
-        </div>
+
     </div>
 </body>
 

@@ -58,34 +58,3 @@ function divideNumbers () {
 
 
 
-const result = document.querySelector('#numAnswer')
-
-const resetBtn = document.querySelector('#reset')
-resetBtn.addEventListener("click", () => {
-    resetNumbers()
-    result.textContent = '0'
-})
-
-const addBtn = document.querySelector('#btnAdd')
-addBtn.addEventListener("click", () => {
-    const answer = addNumbers()
-    result.textContent = answer
-})
-
-const subtractBtn = document.querySelector('#btnSubtract')
-subtractBtn.addEventListener("click", () => {
-    const answer = subtractNumbers()
-    result.textContent = answer
-})
-
-const multiplyBtn = document.querySelector('#btnMultiply')
-multiplyBtn.addEventListener("click", () => {
-    const answer = multiplyNumbers()
-    result.textContent = answer
-})
-
-const divideBtn = document.querySelector('#btnDivide')
-divideBtn.addEventListener("click", () => {
-    const answer = divideNumbers()
-    result.textContent = answer
-})
