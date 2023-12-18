@@ -33,9 +33,9 @@ function clearDisplay(arr) {
 // operations function --------------------------------------------------------------------
 function addNums(arr) {
     const x = arr.indexOf('+')
-    const num1 = Number(arr.slice(0, x))
+    const num1 = Number(arr.slice(0, x).join(''))
     const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1))
+    const num2 = Number(arr.slice(x + 1).join(''))
 
     return num1 + num2
 
@@ -44,9 +44,9 @@ function addNums(arr) {
 
 function subtractNums(arr) {
     const x = arr.indexOf('-')
-    const num1 = Number(arr.slice(0, x))
+    const num1 = Number(arr.slice(0, x).join(''))
     const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1))
+    const num2 = Number(arr.slice(x + 1).join(''))
 
     return num1 - num2
 
@@ -55,9 +55,9 @@ function subtractNums(arr) {
 
 function multiplyNums(arr) {
     const x = arr.indexOf('*')
-    const num1 = Number(arr.slice(0, x))
+    const num1 = Number(arr.slice(0, x).join(''))
     const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1))
+    const num2 = Number(arr.slice(x + 1).join(''))
 
     return num1 * num2
 
@@ -66,9 +66,9 @@ function multiplyNums(arr) {
 
 function divideNums(arr) {
     const x = arr.indexOf('/')
-    const num1 = Number(arr.slice(0, x))
+    const num1 = Number(arr.slice(0, x).join(''))
     const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1))
+    const num2 = Number(arr.slice(x + 1).join(''))
 
     return num1 / num2
 
@@ -92,6 +92,7 @@ function getAnswer(arr) {
         return divideNums(arr)
     }
 
+    return arr
 }
 
 
@@ -99,6 +100,7 @@ function getAnswer(arr) {
 
 
 const myNums = []
+let equals = 0
 
 const result = document.querySelector('#result')
 
@@ -211,7 +213,8 @@ btnDivide.addEventListener('click', () => {
 
 const btnEquals = document.querySelector('#btnEquals')
 btnEquals.addEventListener('click', () => {
-    setDisplay(getAnswer(myNums))
+    equals = getAnswer(myNums)
+    setDisplay(equals)
     myNums.length = 0
 
 })

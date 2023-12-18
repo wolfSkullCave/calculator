@@ -76,3 +76,8 @@ console.log(multiplyNums(multiply))
 console.log(divideNums(divide))
 
 console.log(getAnswer(add))
+
+
+slice is returning a , eg. 1,0 instead of 10
+
+arr.join('')
