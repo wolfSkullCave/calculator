@@ -2,112 +2,77 @@ function testFunction() {
     return 'test function'
 }
 
-
-function getUserNumbers() {
-    const usrNum1 = Number(document.getElementById('usrNum1').value)
-    const usrNum2 = Number(document.getElementById('usrNum2').value)
-
-    const nums = [usrNum1, usrNum2]
-
-    return nums
+function displayNumbers() {
+    console.log(num1)
+    console.log(num2)
+    console.log(answer)
+    console.log(myNums)
 }
 
-
-function setDisplay(arr) {
-    if (Array.isArray(arr)) {
-        let stringLimit = 15
-        let trimmedString = arr.join('').substring(0, stringLimit)
-
-        result.textContent = trimmedString
+function setDisplay(str) {
+    if (Array.isArray(str)) {
+        result.textContent = str.join('')
     } else {
-        result.textContent = arr
+        result.textContent = 0
+
     }
 
 }
 
-function clearDisplay(arr) {
-    arr.length = 0
-    setDisplay('0')
-}
+
 
 // operations function --------------------------------------------------------------------
-function addNums(arr) {
-    const x = arr.indexOf('+')
-    const num1 = Number(arr.slice(0, x).join(''))
-    const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1).join(''))
+function addNums(num1, num2) {
+    firstNum = Number(num1.join(''))
+    secondNum = Number(num2.join(''))
 
-    return num1 + num2
+    return firstNum + secondNum
+}
+
+
+function subtractNums(num1, num2) {
+    firstNum = Number(num1.join(''))
+    secondNum = Number(num2.join(''))
+
+    return firstNum - secondNum
 
 }
 
 
-function subtractNums(arr) {
-    const x = arr.indexOf('-')
-    const num1 = Number(arr.slice(0, x).join(''))
-    const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1).join(''))
+function multiplyNums(num1, num2) {
+    firstNum = Number(num1.join(''))
+    secondNum = Number(num2.join(''))
 
-    return num1 - num2
+    return firstNum * secondNum
 
 }
 
 
-function multiplyNums(arr) {
-    const x = arr.indexOf('*')
-    const num1 = Number(arr.slice(0, x).join(''))
-    const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1).join(''))
+function divideNums(num1, num2) {
+    firstNum = Number(num1.join(''))
+    secondNum = Number(num2.join(''))
 
-    return num1 * num2
+    return firstNum / secondNum
 
 }
 
-
-function divideNums(arr) {
-    const x = arr.indexOf('/')
-    const num1 = Number(arr.slice(0, x).join(''))
-    const operator = arr[x]
-    const num2 = Number(arr.slice(x + 1).join(''))
-
-    return num1 / num2
-
-}
-
-
-function getAnswer(arr) {
-    if (arr.includes('+')) {
-        return addNums(arr)
-    }
-
-    if (arr.includes('-')) {
-        return subtractNums(arr)
-    }
-
-    if (arr.includes('*')) {
-        return multiplyNums(arr)
-    }
-
-    if (arr.includes('/')) {
-        return divideNums(arr)
-    }
-
-    return arr
-}
 
 
 // ------------------------------------------------------------------------------------
 
 
 const myNums = []
-let equals = 0
+let num1 = []
+let operator = 0
+let num2 = []
+let answer = 0
 
 const result = document.querySelector('#result')
 
 const btnReset = document.querySelector('#btnAc')
 btnReset.addEventListener('click', () => {
-    clearDisplay(myNums)
-
+    myNums.length = 0
+    setDisplay(0)
 })
 
 
@@ -131,7 +96,6 @@ const btnNine = document.querySelector('#btnNine')
 btnNine.addEventListener('click', () => {
     myNums.push(9)
     setDisplay(myNums)
-
 })
 
 const btnFour = document.querySelector('#btnFour')
@@ -144,8 +108,8 @@ btnFour.addEventListener('click', () => {
 const btnFive = document.querySelector('#btnFive')
 btnFive.addEventListener('click', () => {
     myNums.push(5)
+    setDisplay('0')
     setDisplay(myNums)
-
 })
 
 const btnSix = document.querySelector('#btnSix')
@@ -187,34 +151,68 @@ btnZero.addEventListener('click', () => {
 // operations (+-*/) ----------------------------------------------------------------------
 const btnAdd = document.querySelector('#btnAdd')
 btnAdd.addEventListener('click', () => {
-    myNums.push('+')
-    setDisplay(myNums)
+    operator = '+'
+
+    num1 = result.textContent
+    setDisplay('0')
+    myNums.length = 0
 })
 
 const btnSubtract = document.querySelector('#btnSubtract')
 btnSubtract.addEventListener('click', () => {
-    myNums.push('-')
-    setDisplay(myNums)
+    operator = '-'
+
+    num1 = result.textContent
+    setDisplay('0')
+    myNums.length = 0
 })
 
 const btnMultiply = document.querySelector('#btnMultiply')
 btnMultiply.addEventListener('click', () => {
-    myNums.push('*')
-    setDisplay(myNums)
+    operator = '*'
+
+    num1 = result.textContent
+    setDisplay('0')
+    myNums.length = 0
 })
 
 const btnDivide = document.querySelector('#btnDivide')
 btnDivide.addEventListener('click', () => {
-    myNums.push('/')
-    setDisplay(myNums)
+    operator = '/'
+
+    num1 = result.textContent
+    setDisplay('0')
+    myNums.length = 0
 })
 
 // calculations ---------------------------------------------------------------------------
 
 const btnEquals = document.querySelector('#btnEquals')
 btnEquals.addEventListener('click', () => {
-    equals = getAnswer(myNums)
-    setDisplay(equals)
-    myNums.length = 0
+    switch (operator) {
+        case '+':
+            num2 = result.textContent
+            answer = Number(num1) + Number(num2)
+            result.textContent = answer + ''
+            break
+        case '-':
+            num2 = result.textContent
+            answer = Number(num1) - Number(num2)
+            result.textContent = answer + ''
+            break
+        case '*':
+            num2 = result.textContent
+            answer = Number(num1) * Number(num2)
+            result.textContent = answer + ''
+            break
+        case '/':
+            num2 = result.textContent
+            answer = Number(num1) / Number(num2)
+            result.textContent = answer + ''
+            break
+    }
 
+    num1 = 0
+    num2 = 0
+    myNums.length = 0
 })

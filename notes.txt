@@ -1,83 +1,16 @@
-function addNums(arr) {
-  const x = arr.indexOf('+')
-  const num1 = Number(arr.slice(0, x))
-  const operator = arr[x]
-  const num2 = Number(arr.slice(x + 1))
+const arr = [10, '-', 2, '+', 6]
 
-  return num1 + num2
+let num1
+let operator = 0
+let num2
 
+buttons
+if (operator === 0){
+  num1.push(buttonValue)
+}  else {
+  num2.push(buttonValue)
 }
 
 
-function subtractNums(arr) {
-  const x = arr.indexOf('-')
-  const num1 = Number(arr.slice(0, x))
-  const operator = arr[x]
-  const num2 = Number(arr.slice(x + 1))
-
-  return num1 - num2
-
-}
-
-
-function multiplyNums(arr) {
-  const x = arr.indexOf('*')
-  const num1 = Number(arr.slice(0, x))
-  const operator = arr[x]
-  const num2 = Number(arr.slice(x + 1))
-
-  return num1 * num2
-
-}
-
-
-function divideNums(arr) {
-  const x = arr.indexOf('/')
-  const num1 = Number(arr.slice(0, x))
-  const operator = arr[x]
-  const num2 = Number(arr.slice(x + 1))
-
-  return num1 / num2
-
-}
-
-
-function getAnswer (arr) {
-    if (arr.includes('+')) {
-        return addNums(arr)
-    }
-
-    if (arr.includes('-')) {
-        return subtractNums(arr)
-    }
-
-    if (arr.includes('*')) {
-        return multiplyNums(arr)
-    }
-
-    if (arr.includes('/')) {
-        return divideNums(arr)
-    }
-
-}
-
-
-
-
-
-add = [10, '+', 2]
-subtract = [10, '-', 2]
-multiply = [10, '*', 2]
-divide = [10, '/', 2]
-
-console.log(addNums(add))
-console.log(subtractNums(subtract))
-console.log(multiplyNums(multiply))
-console.log(divideNums(divide))
-
-console.log(getAnswer(add))
-
-
-slice is returning a , eg. 1,0 instead of 10
-
-arr.join('')
+operator
+operator = buttonValue
