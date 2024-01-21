@@ -1,52 +1,47 @@
 
-function operate(){
+function operate() {
     let answer
 
-    switch(operator){
+    switch (operator) {
         case '+':
             answer = num1 + num2
             break
         default:
-            console.log(num1,operator,num2)
+            console.log(num1, operator, num2)
     }
 
-    displaySum(answer)
+    setDisplay(answer)
 }
 
 
 function setNumbers(myNum) {
-    if (Number.isInteger(myNum)) {
-        if (num1 === null) {
-            num1 = myNum
-        } else {
-            num2 = myNum
-        }
-    } else {
-        operator = myNum
-    }
+    
+    
 
-    displaySum(myNum)
+    setDisplay(myNum)
 }
 
 
-function resetAll(){
+function resetAll() {
     num1 = null
     operator = null
     num2 = null
+    numArr.length = 0
+
+    setDisplay(0)
 }
 
 
-function displaySum(myNum){
-    sumArr = []
-    sumArr.push(myNum)
-    resultL.textContent = `${sumArr}`
+function setDisplay(myNum){
+    resultL.textContent = `${myNum}`
 
 }
-
 
 function test() {
-    console.log(num1,operator,num2)
+    console.log(num1, operator, num2)
 }
+
+
 
 
 
@@ -54,24 +49,43 @@ let num1 = null
 let operator = null
 let num2 = null
 
+const numArr = []
+
 
 btnAc = document.querySelector('#btnAc')
 btnAc.addEventListener('click', resetAll)
 
 // numbers
 btnOne = document.querySelector('#btnOne')
-btnOne.addEventListener('click', () => setNumbers(1))
+btnOne.addEventListener('click', () =>{
+    numArr.push(1)
+    setDisplay(numArr.join(''))
+})
 
 btnTwo = document.querySelector('#btnTwo')
-btnTwo.addEventListener('click',  () => setNumbers(2))
+btnTwo.addEventListener('click', () => {
+    numArr.push(2)
+    setDisplay(numArr.join(''))
+})
 
 btnThree = document.querySelector('#btnThree')
-btnThree.addEventListener('click',  () => setNumbers(3))
+btnThree.addEventListener('click', () => {
+    numArr.push(3)
+    setDisplay(numArr.join(''))
+})
 
 // operators
 btnAdd = document.querySelector('#btnAdd')
-btnAdd.addEventListener('click', () => setNumbers('+'))
+btnAdd.addEventListener('click', () => {
+    operator = '+'
+    setDisplay(operator)
+    num1 = Number(numArr.join(''))
+    numArr.length = 0
+})
 
 // answer
 btnEquals = document.querySelector('#btnEquals')
-btnEquals.addEventListener('click', operate)
+btnEquals.addEventListener('click', () => {
+    num2 = Number(numArr.join(''))
+    operate()
+})
