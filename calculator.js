@@ -23,13 +23,6 @@ function operate() {
 }
 
 
-function setNumbers(myNum) {
-    
-    
-
-    setDisplay(myNum)
-}
-
 
 function resetAll() {
     num1 = null
@@ -50,7 +43,16 @@ function test() {
     console.log(num1, operator, num2)
 }
 
+function setNum1(){
+    // num1 = Number(numArr.join(''))
+    num1 = Number(resultL.textContent)
+    numArr.length = 0
+}
 
+function setNum2(){
+    num2 = Number(resultL.textContent)
+    numArr.length = 0
+}
 
 
 
@@ -59,7 +61,7 @@ let operator = null
 let num2 = null
 
 const numArr = []
-// resultL = document.querySelector('#resultL').textContent
+resultL = document.querySelector('#resultL')
 
 btnAc = document.querySelector('#btnAc')
 btnAc.addEventListener('click', resetAll)
@@ -136,41 +138,35 @@ btnPoint.addEventListener('click', () => {
 btnAdd = document.querySelector('#btnAdd')
 btnAdd.addEventListener('click', () => {
     operator = '+'
+    setNum1()
     setDisplay(operator)
-    num1 = Number(numArr.join(''))
-    numArr.length = 0
-
 })
 
 btnSubtract = document.querySelector('#btnSubtract')
 btnSubtract.addEventListener('click', () => {
     operator = '-'
+    setNum1()
     setDisplay(operator)
-    setDisplay(operator)
-    num1 = Number(numArr.join(''))
-    numArr.length = 0
 })
 
 btnMultiply = document.querySelector('#btnMultiply')
 btnMultiply.addEventListener('click', () => {
     operator = '*'
+    setNum1()
     setDisplay(operator)
-    num1 = Number(numArr.join(''))
-    numArr.length = 0
 })
 
 btnDivide = document.querySelector('#btnDivide')
 btnDivide.addEventListener('click', () => {
     operator = '/'
+    setNum1()
     setDisplay(operator)
-    num1 = Number(numArr.join(''))
-    numArr.length = 0
 })
 
 
 // answer
 btnEquals = document.querySelector('#btnEquals')
 btnEquals.addEventListener('click', () => {
-    num2 = Number(numArr.join(''))
+    setNum2()
     operate()
 })
