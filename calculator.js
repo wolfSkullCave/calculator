@@ -34,7 +34,7 @@ function resetAll() {
 }
 
 
-function setDisplay(myNum){
+function setDisplay(myNum) {
     resultL.textContent = `${myNum}`
 
 }
@@ -43,13 +43,13 @@ function test() {
     console.log(num1, operator, num2)
 }
 
-function setNum1(){
+function setNum1() {
     // num1 = Number(numArr.join(''))
     num1 = Number(resultL.textContent)
     numArr.length = 0
 }
 
-function setNum2(){
+function setNum2() {
     num2 = Number(resultL.textContent)
     numArr.length = 0
 }
@@ -68,7 +68,7 @@ btnAc.addEventListener('click', resetAll)
 
 // numbers
 btnOne = document.querySelector('#btnOne')
-btnOne.addEventListener('click', () =>{
+btnOne.addEventListener('click', () => {
     numArr.push(1)
     setDisplay(numArr.join(''))
 })
@@ -169,4 +169,18 @@ btnEquals = document.querySelector('#btnEquals')
 btnEquals.addEventListener('click', () => {
     setNum2()
     operate()
+})
+
+
+// other buttons
+btnNeg = document.querySelector('#btnNeg')
+btnNeg.addEventListener('click', () => {
+    numArr.push('-')
+    setDisplay(numArr.join(''))
+})
+
+btnPercent = document.querySelector('#btnPercent')
+btnPercent.addEventListener('click', () => {
+    numArr.push('.')
+    setDisplay(numArr.join(''))
 })
